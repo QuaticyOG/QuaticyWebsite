@@ -194,9 +194,9 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-8 sm:gap-16 mt-20 pt-10 border-t border-white/[0.05]"
           >
             {[
-              { value: '150+', label: 'Bots Delivered' },
-              { value: '500+', label: 'Servers Setup' },
-              { value: '99%', label: 'Satisfaction' },
+              { value: '5+', label: 'Bots Delivered' },
+              { value: '10+', label: 'Servers Setup' },
+              { value: '100%', label: 'Satisfaction' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
