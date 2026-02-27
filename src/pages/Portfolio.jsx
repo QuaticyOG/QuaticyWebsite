@@ -13,7 +13,7 @@ const projects = [
     packageColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
     description: 'A fully custom moderation and security bot built for a 2k+ member community. Features auto-mod, ticket system, leveling, and custom role management. (Still under development)',
     tags: ['Moderation', 'Tickets', 'Leveling', 'Auto-Mod'],
-    image: '/img/Betstrike_Bot.png'
+    image: BetstrikeBot,
   },
   {
     type: 'server',
@@ -181,4 +181,5 @@ export default function Portfolio() {
     </div>
   );
 }
+
 
