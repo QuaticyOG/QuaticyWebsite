@@ -6,7 +6,8 @@ import { createPageUrl } from '@/utils';
 
 import BetstrikeBot from '../img/Betstrike_Bot.png';
 import BetstrikeServer from '../img/Betstrike_server.png';
-import leaderboard_bot from '../img/leaderboard_bot.png';
+import leaderboardbot from '../img/leaderboard_bot.png';
+import curiouscurrie from '../img/curiouscurrie.png';
 
 const projects = [
   {
@@ -38,7 +39,18 @@ const projects = [
     description:
       'An advanced leaderboard bot that tracks user invites with built-in security measures, automatically posts the monthly leaderboard, and rewards only the top-ranking users at the end of each month.',
     tags: ['Automatic', 'Leaderboard', 'Rewards'],
-    image: BetstrikeServer,
+    image: leaderboardbot,
+  },
+    {
+    type: 'server',
+    name: 'CuriousCurrie Community',
+    package: 'Server Overload',
+    url: 'https://discord.gg/kSwsF35u3s',
+    packageColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+    description:
+      'A high-energy streamer community server, featuring cleanly organized channels, verified member roles, powerful bots, and a fully branded.',
+    tags: ['Automation', 'Branding', 'Roles', 'Bots'],
+    image: curiouscurrie,
   },
 ];
 
@@ -211,4 +223,5 @@ export default function Portfolio() {
     </div>
   );
 }
+
 
