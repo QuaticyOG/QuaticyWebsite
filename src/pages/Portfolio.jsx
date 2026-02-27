@@ -138,7 +138,6 @@ export default function Portfolio() {
   {filtered.map((project, i) => {
     const Card = (
       <motion.div
-        key={project.name}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: i * 0.05 }}
@@ -226,6 +225,7 @@ export default function Portfolio() {
     </div>
   );
 }
+
 
 
 
