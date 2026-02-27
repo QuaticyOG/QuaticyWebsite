@@ -194,9 +194,9 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-8 sm:gap-16 mt-20 pt-10 border-t border-white/[0.05]"
           >
             {[
-              { value: '5+', label: 'Bots Delivered' },
-              { value: '10+', label: 'Servers Setup' },
-              { value: '100%', label: 'Satisfaction' },
+              { value: '150+', label: 'Bots Delivered' },
+              { value: '500+', label: 'Servers Setup' },
+              { value: '99%', label: 'Satisfaction' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -342,18 +342,18 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               {
-                name: 'BigBacon',
-                avatar: 'https://cdn.discordapp.com/avatars/285551301591564288/a_618bbd87cf9844e3b3926d98ad4b80cf.gif?size=512',
+                name: 'Alex R.',
+                avatar: 'https://i.pravatar.cc/150?img=11',
                 stars: 5,
                 text: 'Quaticy built us a fully custom moderation bot in just 2 days. Super clean code, easy to use, and exactly what we asked for. Highly recommend!',
                 tags: [
                   { label: 'Bot Forge', color: 'bg-blue-500/10 border-blue-500/20 text-blue-400' },
                   { label: 'Bot Spark', color: 'bg-green-500/10 border-green-500/20 text-green-400' },
                 ],
-                tagColor: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
-                borderHover: 'hover:border-purple-500/20',
+                tagColor: 'bg-blue-500/10 border-blue-500/20 text-blue-400',
+                borderHover: 'hover:border-blue-500/20',
+                avatarBorder: 'border-blue-500/30',
                 bigClient: { label: 'betstrike.com', url: 'https://betstrike.com' },
-                avatarBorder: 'border-purple-500/30',
               },
               {
                 name: 'Maya K.',
@@ -421,12 +421,13 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                  {(review.tags || [{ label: review.tag, color: review.tagColor }]).map((t) => (
-                     <span key={t.label} className={`text-xs px-2.5 py-1 rounded-full border font-medium ${t.color}`}>
-                    {t.label}
-                     </span>
-                   ))}
-                  </span>
+                  <div className="ml-auto flex flex-col items-end gap-1">
+                    {(review.tags || [{ label: review.tag, color: review.tagColor }]).map((t) => (
+                      <span key={t.label} className={`text-xs px-2.5 py-1 rounded-full border font-medium ${t.color}`}>
+                        {t.label}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed">{review.text}</p>
               </motion.div>
