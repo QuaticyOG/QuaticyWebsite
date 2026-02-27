@@ -47,7 +47,7 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
-import Home from './pages/Home';
+import Home from "./pages/home";
 import GetYourBot from './pages/GetYourBot';
 import OrderServer from './pages/OrderServer';
 import Portfolio from './pages/Portfolio';
