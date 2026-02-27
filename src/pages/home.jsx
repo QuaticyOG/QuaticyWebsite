@@ -347,8 +347,8 @@ export default function Home() {
                 stars: 5,
                 text: 'Quaticy built us a fully custom moderation bot in just 2 days. Super clean code, easy to use, and exactly what we asked for. Highly recommend!',
                 tags: [
-                  { label: 'Server Overlord', color: 'bg-blue-500/10 border-purple-500/20 text-purple-400' },
-                  { label: 'Bot Overlord', color: 'bg-green-500/10 border-purple-500/20 text-purple-400' },
+                  { label: 'Server Overlord', color: 'bg-purple-500/10 border-purple-500/20 text-purple-400' },
+                  { label: 'Bot Overlord', color: 'bg-purple-500/10 border-purple-500/20 text-purple-400' },
                 ],
                 tagColor: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
                 borderHover: 'hover:border-purple-500/20',
