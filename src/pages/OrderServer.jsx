@@ -35,7 +35,7 @@ const handleSubmit = async (e) => {
         name: form.name,
         discord: form.discord,
         email: form.email,
-        botType: `SERVER-${form.serverType}`, // <--- change this line
+        serverType: form.serverType,
         description: form.description,
         reply_to: form.email,
       },
