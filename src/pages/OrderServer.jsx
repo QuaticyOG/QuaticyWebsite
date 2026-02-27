@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Server, Zap, Shield, Users, Settings, Star, ArrowRight, ChevronLeft, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import emailjs from '@emailjs/browser';
 
 const features = [
   { icon: Server, title: 'Server Creation & Layout', desc: 'Every package includes full server creation with a clean layout, rules channel, and welcome message.' },
@@ -21,10 +22,30 @@ export default function OrderServer() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_SERVER_TEMPLATE_ID, // <-- new template for server orders
+      {
+        name: form.name,
+        discord: form.discord,
+        email: form.email,
+        serverType: form.serverType,
+        description: form.description,
+        reply_to: form.email,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
     setSubmitted(true);
-  };
+  } catch (err) {
+    console.error("Email failed:", err);
+    alert("Failed to send order. Check console.");
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white">
