@@ -270,10 +270,10 @@ export default function Home() {
                       ))}
                     </div>
                     
-                    <button className="flex items-center gap-2 text-purple-400 font-medium group-hover:text-purple-300 transition-colors">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+<Link to={service.title === 'Custom Discord Bots' ? createPageUrl('GetYourBot') : createPageUrl('OrderServer')} className="flex items-center gap-2 text-purple-400 font-medium group-hover:text-purple-300 transition-colors">
+  Learn More
+  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+</Link>
                   </div>
                 </div>
               </motion.div>
