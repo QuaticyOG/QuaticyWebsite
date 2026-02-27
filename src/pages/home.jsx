@@ -73,7 +73,15 @@ export default function Home() {
             {sidebarButtons.map((button, index) => (
               <motion.div
                 key={button.label}
-                onClick={() => button.isPage ? window.location.href = button.href : document.querySelector(button.href)?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                if (button.isExternal) {
+                window.open(button.href, '_blank', 'noopener,noreferrer');
+               } else if (button.isPage) {
+                window.location.href = button.href;
+                } else {
+                document.querySelector(button.href)?.scrollIntoView({ behavior: 'smooth' });
+                }
+                }}
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
