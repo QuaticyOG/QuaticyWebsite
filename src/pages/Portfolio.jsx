@@ -7,12 +7,12 @@ import { createPageUrl } from '@/utils';
 const projects = [
   {
     type: 'bot',
-    name: 'NightGuard Bot',
+    name: 'Betstrike Moderation',
     package: 'Bot Overlord',
     packageColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
-    description: 'A fully custom moderation and security bot built for a 50k+ member gaming community. Features auto-mod, ticket system, leveling, and custom role management.',
+    description: 'A fully custom moderation and security bot built for a 2k+ member community. Features auto-mod, ticket system, leveling, and custom role management. (Still under development)',
     tags: ['Moderation', 'Tickets', 'Leveling', 'Auto-Mod'],
-    image: 'https://images.unsplash.com/photo-1614680376739-414d95ff43df?w=600&q=80',
+    image: '/img/Betstrike_Bot.png',
   },
   {
     type: 'server',
