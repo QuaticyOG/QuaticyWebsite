@@ -15,6 +15,13 @@ export default function Home() {
     { icon: Bot, label: 'Get Your Bot', href: createPageUrl('GetYourBot'), isPage: true },
     { icon: Server, label: 'Order a Server', href: createPageUrl('OrderServer'), isPage: true },
     { icon: Sparkles, label: 'View Services', href: '#services' },
+      {
+    icon: Users, // or Star if you prefer
+    label: 'Fiverr',
+    href: 'https://www.fiverr.com/avizotv?public_mode=true',
+    isExternal: true,
+  },
+];
   ];
 
   const services = [
