@@ -342,17 +342,17 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               {
-                name: 'Alex R.',
-                avatar: 'https://i.pravatar.cc/150?img=11',
+                name: 'BigBacon',
+                avatar: 'https://cdn.discordapp.com/avatars/285551301591564288/a_618bbd87cf9844e3b3926d98ad4b80cf.gif?size=512',
                 stars: 5,
                 text: 'Quaticy built us a fully custom moderation bot in just 2 days. Super clean code, easy to use, and exactly what we asked for. Highly recommend!',
                 tags: [
-                  { label: 'Bot Forge', color: 'bg-blue-500/10 border-blue-500/20 text-blue-400' },
-                  { label: 'Bot Spark', color: 'bg-green-500/10 border-green-500/20 text-green-400' },
+                  { label: 'Server Overlord', color: 'bg-blue-500/10 border-purple-500/20 text-purple-400' },
+                  { label: 'Bot Overlord', color: 'bg-green-500/10 border-purple-500/20 text-purple-400' },
                 ],
-                tagColor: 'bg-blue-500/10 border-blue-500/20 text-blue-400',
-                borderHover: 'hover:border-blue-500/20',
-                avatarBorder: 'border-blue-500/30',
+                tagColor: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
+                borderHover: 'hover:border-purple-500/20',
+                avatarBorder: 'border-purple-500/30',
                 bigClient: { label: 'betstrike.com', url: 'https://betstrike.com' },
               },
               {
