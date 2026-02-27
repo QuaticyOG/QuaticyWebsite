@@ -348,8 +348,9 @@ export default function Home() {
                 text: 'Quaticy built us a fully custom moderation bot in just 2 days. Super clean code, easy to use, and exactly what we asked for. Highly recommend!',
                 tag: 'Server Overlord',
                 tagColor: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
-                borderHover: 'hover:border-blue-500/20',
-                avatarBorder: 'border-blue-500/30',
+                tag: 'Server Overlord',
+                tagColor: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
+                borderHover: 'hover:border-purple-500/20',
                 bigClient: { label: 'betstrike.com', url: 'https://betstrike.com' },
               },
               {
