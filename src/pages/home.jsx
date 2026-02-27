@@ -164,16 +164,22 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 font-semibold text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </motion.button>
+<motion.button
+  onClick={() =>
+    document.querySelector('#services')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 font-semibold text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
+>
+  <span className="relative z-10 flex items-center gap-2">
+    Get Started
+    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  </span>
+</motion.button>
             
             <Link to={createPageUrl('Portfolio')}>
               <motion.button
