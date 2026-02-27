@@ -24,7 +24,7 @@ export default function OrderServer() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
+console.log("SERVER TEMPLATE:", import.meta.env.VITE_EMAILJS_SERVER_TEMPLATE_ID);
   try {
     await emailjs.send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
