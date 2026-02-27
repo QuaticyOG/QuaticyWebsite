@@ -21,7 +21,6 @@ export default function Home() {
     href: 'https://www.fiverr.com/avizotv?public_mode=true',
     isExternal: true,
   },
-];
   ];
 
   const services = [
