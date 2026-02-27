@@ -4,6 +4,7 @@ import { Bot, Server, ChevronLeft, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import BetstrikeBot from '../img/Betstrike_Bot.png';
+import BetstrikeServer from '../img/Betstrike_server.png';
 
 const projects = [
   {
@@ -17,12 +18,13 @@ const projects = [
   },
   {
     type: 'server',
-    name: 'CryptoHub Server',
+    name: 'Betstrike Server',
     package: 'Server Overlord',
+    url: 'https://discord.gg/betstrike',
     packageColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
-    description: 'A premium crypto trading community server with organized channels, verified roles, price alert bots, and a fully branded aesthetic.',
-    tags: ['Finance', 'Branding', 'Roles', 'Bots'],
-    image: 'https://images.unsplash.com/photo-1639762681057-408e52192e55?w=600&q=80',
+    description: 'A high-energy gambling community server built for 2k+ members, featuring cleanly organized channels, verified member roles, powerful bots, and a fully branded, engaging aesthetic.',
+    tags: ['Automation', 'Branding', 'Roles', 'Bots'],
+    image: BetstrikeServer,
   },
   {
     type: 'bot',
@@ -131,55 +133,99 @@ export default function Portfolio() {
           ))}
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((project, i) => (
-              <motion.div
-                key={project.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: i * 0.05 }}
-                whileHover={{ y: -6 }}
-                className="group relative bg-[#12121a] border border-white/[0.08] hover:border-purple-500/25 rounded-2xl overflow-hidden transition-all duration-300"
-              >
-                {/* Image */}
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] via-transparent to-transparent" />
-                  {/* Type badge */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10 text-xs text-gray-300 font-medium">
-                    {project.type === 'bot' ? <Bot className="w-3.5 h-3.5 text-purple-400" /> : <Server className="w-3.5 h-3.5 text-blue-400" />}
-                    {project.type === 'bot' ? 'Bot' : 'Server'}
-                  </div>
-                </div>
+{/* Grid */}
+<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {filtered.map((project, i) => {
+    const Card = (
+      <motion.div
+        key={project.name}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: i * 0.05 }}
+        whileHover={{ y: -6, scale: project.url ? 1.02 : 1 }}
+        className={`group relative bg-[#12121a] border border-white/[0.08] hover:border-purple-500/25 rounded-2xl overflow-hidden transition-all duration-300 ${
+          project.url ? 'cursor-pointer' : ''
+        }`}
+      >
+        {/* Image */}
+        <div className="relative h-44 overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] via-transparent to-transparent" />
 
-                {/* Content */}
-                <div className="p-5">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="text-white font-bold text-lg leading-tight">{project.name}</h3>
-                    <span className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full border font-semibold uppercase tracking-wide ${project.packageColor}`}>
-                      {project.package}
-                    </span>
-                  </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.06] text-gray-400">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-          ))}
+          {/* External link icon (only if clickable) */}
+          {project.url && (
+            <ExternalLink className="absolute top-3 right-3 w-4 h-4 text-white/70" />
+          )}
+
+          {/* Type badge */}
+          <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10 text-xs text-gray-300 font-medium">
+            {project.type === 'bot' ? (
+              <Bot className="w-3.5 h-3.5 text-purple-400" />
+            ) : (
+              <Server className="w-3.5 h-3.5 text-blue-400" />
+            )}
+            {project.type === 'bot' ? 'Bot' : 'Server'}
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-5">
+          <div className="flex items-start justify-between gap-2 mb-2">
+            <h3 className="text-white font-bold text-lg leading-tight">
+              {project.name}
+            </h3>
+            <span
+              className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full border font-semibold uppercase tracking-wide ${project.packageColor}`}
+            >
+              {project.package}
+            </span>
+          </div>
+
+          <p className="text-gray-500 text-sm leading-relaxed mb-4">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map(tag => (
+              <span
+                key={tag}
+                className="text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.06] text-gray-400"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    );
+
+    // ✅ Only wrap with link if URL exists
+    if (project.url) {
+      return (
+        <a
+          key={project.name}
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          {Card}
+        </a>
+      );
+    }
+
+    return Card;
+  })}
+</div>
         </div>
       </div>
     </div>
   );
 }
+
 
 
