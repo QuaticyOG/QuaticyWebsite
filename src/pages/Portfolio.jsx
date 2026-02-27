@@ -6,6 +6,7 @@ import { createPageUrl } from '@/utils';
 
 import BetstrikeBot from '../img/Betstrike_Bot.png';
 import BetstrikeServer from '../img/Betstrike_server.png';
+import leaderboard_bot from '../img/leaderboard_bot.png';
 
 const projects = [
   {
@@ -20,7 +21,7 @@ const projects = [
   },
   {
     type: 'server',
-    name: 'Betstrike Server',
+    name: 'Betstrike Community',
     package: 'Server Overlord',
     url: 'https://discord.gg/betstrike',
     packageColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
@@ -31,14 +32,13 @@ const projects = [
   },
   {
     type: 'bot',
-    name: 'EcoBot',
+    name: 'LuckyLadder',
     package: 'Bot Forge',
     packageColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
     description:
-      'A versatile economy bot with a shop, currency system, leaderboard, and daily rewards — perfect for engagement-focused servers.',
-    tags: ['Economy', 'Leaderboard', 'Shop', 'Rewards'],
-    image:
-      'https://images.unsplash.com/photo-1622630998477-20aa696ef439?w=600&q=80',
+      'An advanced leaderboard bot that tracks user invites with built-in security measures, automatically posts the monthly leaderboard, and rewards only the top-ranking users at the end of each month.',
+    tags: ['Automatic', 'Leaderboard', 'Rewards'],
+    image: BetstrikeServer,
   },
 ];
 
@@ -211,3 +211,4 @@ export default function Portfolio() {
     </div>
   );
 }
+
