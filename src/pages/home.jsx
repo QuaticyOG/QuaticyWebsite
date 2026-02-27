@@ -350,8 +350,10 @@ export default function Home() {
                   { label: 'Bot Forge', color: 'bg-blue-500/10 border-blue-500/20 text-blue-400' },
                   { label: 'Bot Spark', color: 'bg-green-500/10 border-green-500/20 text-green-400' },
                 ],
+                tagColor: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
                 borderHover: 'hover:border-purple-500/20',
                 bigClient: { label: 'betstrike.com', url: 'https://betstrike.com' },
+                avatarBorder: 'border-purple-500/30',
               },
               {
                 name: 'Maya K.',
@@ -419,8 +421,11 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                  <span className={`ml-auto text-xs px-2.5 py-1 rounded-full border font-medium ${review.tagColor}`}>
-                    {review.tag}
+                  {(review.tags || [{ label: review.tag, color: review.tagColor }]).map((t) => (
+                     <span key={t.label} className={`text-xs px-2.5 py-1 rounded-full border font-medium ${t.color}`}>
+                    {t.label}
+                     </span>
+                   ))}
                   </span>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed">{review.text}</p>
