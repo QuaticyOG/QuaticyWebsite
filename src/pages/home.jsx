@@ -301,7 +301,7 @@ export default function Home() {
             {[
               { icon: Shield, title: 'Secure & Reliable', desc: 'Built with security best practices and 99.9% uptime' },
               { icon: Zap, title: 'Fast Delivery', desc: 'Quick turnaround without compromising quality' },
-              { icon: Users, title: '24/7 Support', desc: 'Dedicated support to help you every step of the way' },
+              { icon: Users, title: 'Fast Support', desc: 'Dedicated to help you every step of the way' },
             ].map((item, index) => (
               <motion.div
                 key={item.title}
