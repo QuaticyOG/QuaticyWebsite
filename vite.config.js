@@ -1,13 +1,13 @@
-import base44 from "@base44/vite-plugin"
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
-import path from "path"
+import base44 from "@base44/vite-plugin";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
   logLevel: "error",
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   plugins: [
@@ -20,4 +20,4 @@ export default defineConfig({
     }),
     react(),
   ],
-})
+});
