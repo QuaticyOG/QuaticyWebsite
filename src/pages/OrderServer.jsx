@@ -25,12 +25,10 @@ export default function OrderServer() {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  console.log("TEMPLATE:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-
   try {
     await emailjs.send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      import.meta.env.VITE_EMAILJS_SERVER_TEMPLATE_ID,
       {
         name: form.name,
         discord: form.discord,
@@ -91,7 +89,7 @@ const handleSubmit = async (e) => {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
             <Server className="w-4 h-4" />
-            UPDATE
+            Professional Server Setup
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-5">
             <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
