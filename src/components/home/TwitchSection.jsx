@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const TWITCH_CHANNEL = 'quaticy';
 
-
 export default function TwitchSection() {
-  // For a real implementation, you'd check the Twitch API.
-  // For now, we provide a toggle to demo both states.
-  const [isLive, setIsLive] = useState(true);
+  const [isLive, setIsLive] = useState(null); // null = loading
+
+  useEffect(() => {
+    const checkLive = async () => {
+      try {
+        const res = await fetch(`https://decapi.me/twitch/uptime/${TWITCH_CHANNEL}`);
+        const text = await res.text();
+
+        if (text.toLowerCase().includes("offline")) {
+          setIsLive(false);
+        } else {
+          setIsLive(true);
+        }
+      } catch (err) {
+        console.error("Twitch check failed:", err);
+        setIsLive(false);
+      }
+    };
+
+    checkLive();
+
+    // refresh every 60 seconds
+    const interval = setInterval(checkLive, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="py-24 px-6">
@@ -19,26 +40,36 @@ export default function TwitchSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Live Status</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Live Status
+            </h2>
           </div>
 
           {/* Status indicator */}
           <div className="flex items-center gap-2 mb-6">
-            <span className={`w-2.5 h-2.5 rounded-full ${isLive ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
+            <span
+              className={`w-2.5 h-2.5 rounded-full ${
+                isLive ? 'bg-green-500 animate-pulse' : 'bg-red-500'
+              }`}
+            />
             <span className="text-sm text-muted-foreground">
-              {isLive ? 'Currently Live' : 'Offline'}
+              {isLive === null
+                ? 'Checking...'
+                : isLive
+                ? 'Currently Live'
+                : 'Offline'}
             </span>
           </div>
 
           {/* Stream or offline banner */}
           <div className="rounded-xl overflow-hidden border border-border bg-card aspect-video">
             {isLive ? (
-            <iframe
-              src={`https://player.twitch.tv/?channel=${TWITCH_CHANNEL}&parent=www.quaticy.com`}
-              className="w-full h-full"
-              allowFullScreen
-              title="Twitch Stream"
-            />
+              <iframe
+                src={`https://player.twitch.tv/?channel=${TWITCH_CHANNEL}&parent=www.quaticy.com`}
+                className="w-full h-full"
+                allowFullScreen
+                title="Twitch Stream"
+              />
             ) : (
               <img
                 src="/img/offline.png"
