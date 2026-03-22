@@ -33,7 +33,7 @@ export default function TwitchSection() {
           <div className="rounded-xl overflow-hidden border border-border bg-card aspect-video">
             {isLive ? (
               <iframe
-                src={`https://player.twitch.tv/?channel=${quaticy}&parent=${window.location.hostname}`}
+                src={`https://player.twitch.tv/?channel=${TWITCH_CHANNEL}&parent=${window.location.hostname}`}
                 className="w-full h-full"
                 allowFullScreen
                 title="Twitch Stream"
