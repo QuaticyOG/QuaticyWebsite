@@ -7,7 +7,7 @@ const TWITCH_CHANNEL = 'quaticy';
 export default function TwitchSection() {
   // For a real implementation, you'd check the Twitch API.
   // For now, we provide a toggle to demo both states.
-  const [isLive, setIsLive] = useState(false);
+  const [isLive, setIsLive] = useState(true);
 
   return (
     <section className="py-24 px-6">
