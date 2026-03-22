@@ -4,19 +4,25 @@ import { motion } from 'framer-motion';
 const TWITCH_CHANNEL = 'quaticy';
 
 export default function TwitchSection() {
-  const [isLive, setIsLive] = useState(null); // null = loading
+  const [isLive, setIsLive] = useState(null);
 
   useEffect(() => {
     const checkLive = async () => {
       try {
-        const res = await fetch(`https://decapi.me/twitch/online/${TWITCH_CHANNEL}`);
+        const res = await fetch(`https://decapi.me/twitch/uptime/${TWITCH_CHANNEL}`);
         const text = await res.text();
 
-        if (text.toLowerCase().includes("offline")) {
+        const lower = text.toLowerCase();
+
+        // More reliable detection
+        if (lower.includes("offline") || lower.includes("not live")) {
           setIsLive(false);
-        } else {
+        } else if (text.length > 5) {
           setIsLive(true);
+        } else {
+          setIsLive(false);
         }
+
       } catch (err) {
         console.error("Twitch check failed:", err);
         setIsLive(false);
