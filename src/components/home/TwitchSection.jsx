@@ -33,12 +33,12 @@ export default function TwitchSection() {
           {/* Stream or offline banner */}
           <div className="rounded-xl overflow-hidden border border-border bg-card aspect-video">
             {isLive ? (
-<iframe
-  src={`https://player.twitch.tv/?channel=${TWITCH_CHANNEL}&parent=localhost`}
-  className="w-full h-full"
-  allowFullScreen
-  title="Twitch Stream"
-/>/>
+            <iframe
+              src={`https://player.twitch.tv/?channel=${TWITCH_CHANNEL}&parent=localhost`}
+              className="w-full h-full"
+              allowFullScreen
+              title="Twitch Stream"
+            />
             ) : (
               <img
                 src="/img/offline.png"
