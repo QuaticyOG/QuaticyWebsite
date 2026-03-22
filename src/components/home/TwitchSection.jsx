@@ -9,7 +9,7 @@ export default function TwitchSection() {
   useEffect(() => {
     const checkLive = async () => {
       try {
-        const res = await fetch(`https://decapi.me/twitch/uptime/${TWITCH_CHANNEL}`);
+        const res = await fetch(`https://decapi.me/twitch/status/${TWITCH_CHANNEL}`);
         const text = await res.text();
 
         const lower = text.toLowerCase();
