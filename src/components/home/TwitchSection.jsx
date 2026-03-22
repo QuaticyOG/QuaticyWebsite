@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 
 const TWITCH_CHANNEL = 'quaticy';
 
+<iframe
+  src={`https://player.twitch.tv/?channel=${TWITCH_CHANNEL}&parent=localhost`}
+  className="w-full h-full"
+  allowFullScreen
+  title="Twitch Stream"
+/>
+
 export default function TwitchSection() {
   // For a real implementation, you'd check the Twitch API.
   // For now, we provide a toggle to demo both states.
