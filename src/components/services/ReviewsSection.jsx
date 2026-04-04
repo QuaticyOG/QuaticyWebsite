@@ -5,13 +5,13 @@ import { Star } from 'lucide-react';
 const REVIEWS = [
   {
     name: 'BigBacon',
-    role: 'Marketing @ Packy.GG',
+    role: 'Marketing @ Pokewin.com',
     rating: 5,
     text: 'Quaticy is an awesome Discord developer! He builds everything we need quickly and perfectly. He always helps with any request, big or small. Super friendly and very reliable. I give him 5 bacons!',
   },
   {
     name: 'motha',
-    role: 'Owner @ Packy.gg',
+    role: 'Owner @ Pokewin.com',
     rating: 5,
     text: 'Quaticy did a really good job with the server. Everything is insanely clean and well put together — it’s organized in a way that makes it easy to navigate without feeling cluttered. The structure is solid, and you can tell a lot of thought went into how everything is laid out. Even the bot is actually useful, which a lot of servers don’t get right. Overall, it just feels polished and well-built.',
   },
